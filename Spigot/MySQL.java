@@ -64,7 +64,7 @@ public class MySQL {
 	}
 	
 	public void createTable(String tablename) throws SQLException {
-		PreparedStatement ps = getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS ? (value1 VARCHAR(100), value2 VHARCAHR(100))");
+		PreparedStatement ps = getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS ? (value1 VARCHAR(100), value2 VARCHAR(100))");
 		try {
 			ps.setString(1, tablename);
 			ps.executeUpdate();
