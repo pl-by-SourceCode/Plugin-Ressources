@@ -63,6 +63,14 @@ public class MySQL {
 		}
 	}
 	
-  
+  		public void createTable(String tablename) throws SQLException {
+		PreparedStatement ps = getConnection().prepareStatement("CREATE TABLE IF NOT EXISTS ?");
+		try {
+			ps.setString(1, tablename);
+			ps.executeUpdate();
+		} finally {
+			ps.close();
+		}
+	}
 	
 }
